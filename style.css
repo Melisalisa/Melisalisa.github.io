@@ -1,0 +1,105 @@
+/* Gaya Dasar (Reset dan Font) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Latar belakang abu-abu muda */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Pusatkan konten horizontal */
+    padding-top: 40px;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px; /* Batasi lebar agar terlihat seperti aplikasi mobile */
+    text-align: center;
+}
+
+/* --- Gaya Header --- */
+.header-box {
+    background: linear-gradient(135deg, #ADD8E6, #90EE90); /* Gradien lembut */
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-bookmark {
+    /* Untuk simbol kotak/bookmark di header */
+    display: inline-block;
+    width: 15px;
+    height: 18px;
+    background-color: #0047AB; /* Warna ikon */
+    margin-bottom: 5px;
+    border-radius: 2px;
+}
+
+.header-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #0047AB; /* Biru gelap */
+    margin: 5px 0 8px 0;
+}
+
+.header-subtitle {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+/* --- Gaya Kartu Opsi Evaluasi --- */
+.card {
+    display: block; /* Agar link memenuhi lebar */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 18px;
+    text-align: left;
+    text-decoration: none; /* Hilangkan garis bawah link */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efek saat hover/tekan */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Warna Khusus Kartu */
+.card-blue .card-title {
+    color: #0047AB; /* Biru untuk Geometri */
+}
+
+.card-green .card-title {
+    color: #008000; /* Hijau untuk Bilangan Pecahan */
+}
+
+/* --- Gaya Tombol Kembali --- */
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    color: #666;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    background-color: white;
+}
+
+.btn-back:hover {
+    background-color: #e9e9e9;
+}

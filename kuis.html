@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilihan Quiz</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #e8f5e9);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #1b5e20;
+      font-size: 28px;
+      margin-top: 40px;
+    }
+
+    p.subtext {
+      color: #555;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 16px;
+      width: 80%;
+    }
+
+    .quiz-card {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 25px;
+      width: 320px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .quiz-title {
+      color: #1565c0;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .quiz-desc {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .quiz-button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-button:hover {
+      background-color: #388e3c;
+      transform: scale(1.05);
+    }
+
+    .home-btn {
+      margin-top: 30px;
+      background: none;
+      color: #444;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .home-btn:hover {
+      background-color: #f5f5f5;
+    }
+
+    .icon {
+      font-size: 36px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Pilihan Quiz</h1>
+  <p class="subtext">
+    Silakan pilih jenis latihan yang ingin kamu kerjakan!
+  </p>
+
+  <div class="quiz-card">
+    <div class="quiz-title">Quiz Geometri — Jajargenjang</div>
+    <div class="quiz-desc">
+      Menguji pemahaman kamu tentang bangun datar jajargenjang.
+    </div>
+    <button class="quiz-button" onclick="location.href='kuis_geometri.html'">
+      Mulai Quiz Geometri
+    </button>
+  </div>
+
+  <div class="quiz-card">
+    <div class="quiz-title">Quiz Bilangan Cacah</div>
+    <div class="quiz-desc">
+      Latihan soal tentang penjumlahan, pengurangan, dan cerita bilangan cacah.
+    </div>
+    <button class="quiz-button" onclick="location.href='kuis_bilangan.html'">
+      Mulai Quiz Cacah
+    </button>
+  </div>
+
+ <a href="index.html" class="back">← Kembali ke Menu</a>
+  </div>
+    </div>
+    <style> a.back {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background: #5b8c51;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }</style>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis Penjumlahan dan Pengurangan</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #f1f8e9, #e0f7fa);
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1b5e20;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      background: white;
+      padding: 25px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .question {
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+      font-weight: normal;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 20px auto;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+
+    .result {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .wrong {
+      color: red;
+    }
+
+    .feedback {
+      font-size: 15px;
+      margin-top: 6px;
+      font-weight: bold;
+    }
+
+    .home-btn {
+      background-color: #2196f3;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧮 Soal Kuis – Penjumlahan dan Pengurangan</h1>
+
+  <div class="quiz-container" id="quiz">
+    <form id="quizForm">
+
+      <div class="question" id="soal1">
+        1. Hasil dari 345 + 278 = ….
+        <div class="options">
+          <label><input type="radio" name="q1" value="A"> A. 613</label>
+          <label><input type="radio" name="q1" value="B"> B. 623</label>
+          <label><input type="radio" name="q1" value="C"> C. 633</label>
+          <label><input type="radio" name="q1" value="D"> D. 643</label>
+        </div>
+        <div class="feedback" id="feedback1"></div>
+      </div>
+
+      <div class="question" id="soal2">
+        2. Hasil dari 620 – 185 = ….
+        <div class="options">
+          <label><input type="radio" name="q2" value="A"> A. 425</label>
+          <label><input type="radio" name="q2" value="B"> B. 435</label>
+          <label><input type="radio" name="q2" value="C"> C. 445</label>
+          <label><input type="radio" name="q2" value="D"> D. 455</label>
+        </div>
+        <div class="feedback" id="feedback2"></div>
+      </div>
+
+      <div class="question" id="soal3">
+        3. Siti memiliki 456 stiker. Ia membeli lagi 125 stiker. Berapa total stiker Siti sekarang?
+        <div class="options">
+          <label><input type="radio" name="q3" value="A"> A. 561</label>
+          <label><input type="radio" name="q3" value="B"> B. 571</label>
+          <label><input type="radio" name="q3" value="C"> C. 581</label>
+          <label><input type="radio" name="q3" value="D"> D. 591</label>
+        </div>
+        <div class="feedback" id="feedback3"></div>
+      </div>
+
+      <div class="question" id="soal4">
+        4. Di perpustakaan ada 800 buku. Dipinjam 267 buku. Berapa buku yang masih ada di perpustakaan?
+        <div class="options">
+          <label><input type="radio" name="q4" value="A"> A. 523</label>
+          <label><input type="radio" name="q4" value="B"> B. 533</label>
+          <label><input type="radio" name="q4" value="C"> C. 543</label>
+          <label><input type="radio" name="q4" value="D"> D. 553</label>
+        </div>
+        <div class="feedback" id="feedback4"></div>
+      </div>
+
+      <div class="question" id="soal5">
+        5. 245 + 389 – 174 = ….
+        <div class="options">
+          <label><input type="radio" name="q5" value="A"> A. 450</label>
+          <label><input type="radio" name="q5" value="B"> B. 460</label>
+          <label><input type="radio" name="q5" value="C"> C. 470</label>
+          <label><input type="radio" name="q5" value="D"> D. 480</label>
+        </div>
+        <div class="feedback" id="feedback5"></div>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Lihat Hasil</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <button class="home-btn" onclick="window.location.href='index.html'">🏠 Kembali ke Menu Utama</button>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const kunci = {
+        q1: "B",
+        q2: "B",
+        q3: "C",
+        q4: "B",
+        q5: "B"
+      };
+
+      const pembahasan = {
+        q1: "345 + 278 = 623",
+        q2: "620 - 185 = 435",
+        q3: "456 + 125 = 581",
+        q4: "800 - 267 = 533",
+        q5: "245 + 389 - 174 = 460"
+      };
+
+      let benar = 0;
+      const total = Object.keys(kunci).length;
+
+      for (let i = 1; i <= total; i++) {
+        const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+        const feedback = document.getElementById(`feedback${i}`);
+
+        if (!jawaban) {
+          feedback.innerHTML = "❗ Kamu belum menjawab.";
+          feedback.className = "feedback wrong";
+        } else if (jawaban.value === kunci[`q${i}`]) {
+          feedback.innerHTML = `✅ Jawaban Benar! (${pembahasan[`q${i}`]})`;
+          feedback.className = "feedback correct";
+          benar++;
+        } else {
+          feedback.innerHTML = `❌ Jawaban Salah. Jawaban benar adalah ${kunci[`q${i}`]} (${pembahasan[`q${i}`]})`;
+          feedback.className = "feedback wrong";
+        }
+      }
+
+      const nilai = (benar / total) * 100;
+      const resultText = document.getElementById("result");
+      resultText.innerHTML = `<br>Kamu menjawab benar <b>${benar}</b> dari <b>${total}</b> soal.<br>Nilai akhir kamu: <b>${nilai}</b>`;
+      resultText.className = "result " + (nilai >= 60 ? "correct" : "wrong");
+    }
+  </script>
+</body>
+</html>

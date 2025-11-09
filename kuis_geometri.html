@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis Geometri – Jajar Genjang</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #e3f2fd, #e8f5e9);
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1a237e;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      background: white;
+      padding: 25px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .question {
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+      font-weight: normal;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 20px auto;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+
+    .result {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .wrong {
+      color: red;
+    }
+
+    .feedback {
+      font-size: 15px;
+      margin-top: 6px;
+      font-weight: bold;
+    }
+
+    .home-btn {
+      background-color: #2196f3;
+      margin-top: 30px;
+    }
+     a.back {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background: #5b8c51;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📐 Soal Kuis – Geometri (Jajar Genjang)</h1>
+
+  <div class="quiz-container" id="quiz">
+    <form id="quizForm">
+
+      <div class="question" id="soal1">
+        1. Sebuah jajar genjang memiliki panjang alas 18 cm dan sisi miring 12 cm. Keliling jajar genjang tersebut adalah …
+        <div class="image-placeholder">
+                    <img src="geometriKuis/1.jpeg" 
+  
+         width="200"    height="100">
+                </div>
+        <div class="options">
+          <label><input type="radio" name="q1" value="A"> a. 48 cm</label>
+          <label><input type="radio" name="q1" value="B"> b. 50 cm</label>
+          <label><input type="radio" name="q1" value="C"> c. 56 cm</label>
+          <label><input type="radio" name="q1" value="D"> d. 60 cm</label>
+        </div>
+        <div class="feedback" id="feedback1"></div>
+      </div>
+
+      <div class="question" id="soal2">
+        2. Suatu jajar genjang memiliki luas 160 cm² dan alasnya 20 cm. Berapakah tingginya?
+        <div class="image-placeholder">
+                    <img src="geometriKuis/2.jpeg" 
+  
+         width="200"    height="100">
+        <div class="options">
+          <label><input type="radio" name="q2" value="A"> a. 6 cm</label>
+          <label><input type="radio" name="q2" value="B"> b. 7 cm</label>
+          <label><input type="radio" name="q2" value="C"> c. 8 cm</label>
+          <label><input type="radio" name="q2" value="D"> d. 9 cm</label>
+        </div>
+        <div class="feedback" id="feedback2"></div>
+      </div>
+
+      <div class="question" id="soal3">
+        3. Jika alas jajar genjang 8 cm dan tingginya 5 cm, maka luasnya adalah …
+        <div class="image-placeholder">
+                    <img src="geometriKuis/3.jpeg" 
+  
+         width="200"    height="100">
+        <div class="options">
+          <label><input type="radio" name="q3" value="A"> A. 13 cm²</label>
+          <label><input type="radio" name="q3" value="B"> B. 30 cm²</label>
+          <label><input type="radio" name="q3" value="C"> C. 40 cm²</label>
+          <label><input type="radio" name="q3" value="D"> D. 45 cm²</label>
+        </div>
+        <div class="feedback" id="feedback3"></div>
+      </div>
+
+      <div class="question" id="soal4">
+        4. Sebuah jajar genjang memiliki sisi miring 7 cm dan alas 9 cm. Keliling jajar genjang tersebut adalah …
+        <div class="image-placeholder">
+                    <img src="geometriKuis/4.jpeg" 
+  
+         width="200"    height="100">
+        <div class="options">
+          <label><input type="radio" name="q4" value="A"> A. 16 cm</label>
+          <label><input type="radio" name="q4" value="B"> B. 25 cm</label>
+          <label><input type="radio" name="q4" value="C"> C. 32 cm</label>
+          <label><input type="radio" name="q4" value="D"> D. 36 cm</label>
+        </div>
+        <div class="feedback" id="feedback4"></div>
+      </div>
+
+      <div class="question" id="soal5">
+        5. Sebuah taman berbentuk jajar genjang akan dipasang pagar pada seluruh sisinya. Jika panjang dua sisi yang berdekatan adalah 12 m dan 8 m, berapa meter pagar yang dibutuhkan?
+        <div class="options">
+          <label><input type="radio" name="q5" value="A"> A. 20 m</label>
+          <label><input type="radio" name="q5" value="B"> B. 32 m</label>
+          <label><input type="radio" name="q5" value="C"> C. 40 m</label>
+          <label><input type="radio" name="q5" value="D"> D. 48 m</label>
+        </div>
+        <div class="feedback" id="feedback5"></div>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Lihat Hasil</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  <a href="index.html" class="back">← Kembali ke Menu</a>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const kunci = {
+        q1: "D",
+        q2: "C",
+        q3: "C",
+        q4: "C",
+        q5: "C"
+      };
+
+      const pembahasan = {
+        q1: "Keliling = 2 × (18 + 12) = 60 cm",
+        q2: "Tinggi = 160 ÷ 20 = 8 cm",
+        q3: "Luas = 8 × 5 = 40 cm²",
+        q4: "Keliling = 2 × (9 + 7) = 32 cm",
+        q5: "Keliling = 2 × (12 + 8) = 40 m"
+      };
+
+      let benar = 0;
+      const total = Object.keys(kunci).length;
+
+      for (let i = 1; i <= total; i++) {
+        const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+        const feedback = document.getElementById(`feedback${i}`);
+
+        if (!jawaban) {
+          feedback.innerHTML = "❗ Kamu belum menjawab.";
+          feedback.className = "feedback wrong";
+        } else if (jawaban.value === kunci[`q${i}`]) {
+          feedback.innerHTML = `✅ Jawaban Benar! (${pembahasan[`q${i}`]})`;
+          feedback.className = "feedback correct";
+          benar++;
+        } else {
+          feedback.innerHTML = `❌ Jawaban Salah. Jawaban benar adalah ${kunci[`q${i}`]} (${pembahasan[`q${i}`]})`;
+          feedback.className = "feedback wrong";
+        }
+      }
+
+      const nilai = (benar / total) * 100;
+      const resultText = document.getElementById("result");
+      resultText.innerHTML = `<br>Kamu menjawab benar <b>${benar}</b> dari <b>${total}</b> soal.<br>Nilai akhir kamu: <b>${nilai}</b>`;
+      resultText.className = "result " + (nilai >= 60 ? "correct" : "wrong");
+    }
+  </script>
+</body>
+</html>

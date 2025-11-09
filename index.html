@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Matematika</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Menggunakan gradien dari gambar kedua sebagai latar belakang utama */
+            background: linear-gradient(to bottom, #f7f3c6, #90c86e);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- CSS untuk Bagian Kelompok (Gambar 1) --- */
+        .group-section {
+            /* Latar belakang yang menyerupai warna latar belakang di gambar pertama */
+            background-color: #f7f3e8; /* Warna krem muda */
+            padding: 30px 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Menyembunyikan elemen dekoratif yang keluar batas */
+            width: 100%; /* Lebar penuh */
+            box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+            padding-bottom: 50px; /* Jarak bawah sebelum bagian berikutnya */
+        }
+
+        /* Elemen dekoratif (bentuk dan daun) - ini biasanya gambar PNG */
+        /* Anda perlu mengganti URL ini dengan path ke gambar dekorasi Anda */
+        .decoration-top-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px; /* Sesuaikan ukuran */
+            height: auto;
+            transform: rotate(-10deg);
+        }
+        .decoration-top-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px; /* Sesuaikan ukuran */
+            height: auto;
+            transform: rotate(15deg);
+        }
+        .decoration-bottom-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 150px; /* Sesuaikan ukuran */
+            height: auto;
+            transform: rotate(-20deg);
+        }
+        .decoration-bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 150px; /* Sesuaikan ukuran */
+            height: auto;
+            transform: rotate(10deg);
+        }
+        /* Jika dekorasi adalah background-image pada group-section */
+        /* Contoh:
+        .group-section {
+            background-image: url('bentuk-krem-top-left.png'), url('daun-hijau-top-right.png'), ...;
+            background-repeat: no-repeat;
+            background-position: left top, right top, ...;
+            background-size: 150px, 150px, ...;
+        }
+        */
+
+        .group-title-box {
+            display: inline-block;
+            background-color: #d8e3c7; /* Warna krem/hijau muda */
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            font-weight: 600; /* Medium bold */
+            font-size: 1.1em;
+            position: relative; /* Agar z-index bekerja jika ada dekorasi */
+            z-index: 10;
+        }
+
+        .member-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .member-item {
+            display: inline-block;
+            background-color: #a8d5e5; /* Warna biru muda */
+            color: #1a1a1a;
+            padding: 10px 25px;
+            border-radius: 50px; /* Bentuk kapsul */
+            font-size: 1.1em;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- CSS untuk Bagian Matematika (Kode Asli Anda) --- */
+        h1 {
+            margin-top: 40px; /* Jarak dari bagian kelompok di atasnya */
+            color: #2d4825;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
+            gap: 25px;
+            margin-top: 40px;
+            justify-content: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .card {
+            background-color: #f0edcf;
+            border-radius: 20px;
+            text-align: center;
+            padding: 25px 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 1rem;
+            color: #2f4f2f;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #2d4825;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .group-title-box {
+                margin-bottom: 25px;
+            }
+            .member-list {
+                gap: 15px;
+            }
+            .group-section {
+                padding-bottom: 30px;
+            }
+            .decoration-top-left, .decoration-top-right,
+            .decoration-bottom-left, .decoration-bottom-right {
+                width: 100px; /* Sesuaikan ukuran dekorasi untuk layar kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="group-section">
+        
+        
+        <div class="group-title-box">Kelompok 6 C23</div>
+        
+        <div class="member-list">
+            <div class="member-item">Agustina Firmanti (230401140081)</div>
+            <div class="member-item">Isfa Anni (230401140082)</div>
+            <div class="member-item">Bilqis Elmilqis (230401140089)</div>
+        </div>
+    </div>
+
+    <h1>Belajar Matematika</h1>
+
+    <div class="container">
+        <a href="bilangan.html" class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2729/2729007.png" alt="Bilangan Cacah">
+            <h2>BILANGAN CACAH<br>PENJUMLAHAN<br>DAN PENGURANGAN</h2>
+        </a>
+
+        <a href="geometri.html" class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1048/1048945.png" alt="Geometri">
+            <h2>GEOMETRI<br>JAJAR GENJANG</h2>
+        </a>
+        <a href="kuis.html" class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2965/2965746.png" alt="Kuis">
+            <h2>KUIS</h2>
+        </a>
+        <a href="evaluasi.html" class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1048/1048999.png" alt="Evaluasi">
+            <h2>EVALUASI<br>JAJAR GENJANG</h2>
+        </a>
+
+    </div>
+
+    <footer>© 2025 Belajar Matematika Interaktif</footer>
+    
+</body>
+</html>
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Soal Bilangan Cacah</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f3f9ff;
+    margin: 30px;
+  }
+  h2 { text-align: center; color: #333; }
+  .soal {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .feedback {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  .benar {
+    color: green;
+  }
+  .salah {
+    color: red;
+  }
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button:hover { background-color: #0056b3; }
+  a.back {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background: #5b8c51;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Soal Bilangan Cacah</h2>
+
+<form id="quizForm">
+  <div id="quiz"></div>
+  <button type="button" onclick="cekJawaban()">Kirim Jawaban</button>
+</form>
+
+<h3 id="hasil"></h3>
+
+<script>
+const soal = [
+  {q:"1. Tentukan hasil dari 579 + 258 =", a:["837","337","485","738"], c:"837"},
+  {q:"2. Tentukan hasil dari 653 + 158 =", a:["451","411","811","739"], c:"811"},
+  {q:"3. Tetukan hasil dari 753 – 295 =", a:["458","320","228","145"], c:"458"},
+  {q:"4. Tentukan hasil dari 435 – 168 =", a:["582","167","382","267"], c:"267"},
+  {q:"5. Tentukan hasil dari 552 – 349 =", a:["203","453","230","158"], c:"203"},
+  {q:"6. Bu guru mempunyai permen sebanyak 829 bungkus, kemudian diberikan kepada Dela 215 bungkus permen, berapa sisa permen Bu Guru?", a:["525","614","539","414"], c:"614"},
+  {q:"7. Di sebuah perpustakaan terdapat 250 buku cerita anak dan 345 buku pengetahuan umum, berapa jumlah seluruh buku?", a:["485","395","845","595"], c:"595"},
+  {q:"8. Sebuah toko roti menjual 324 roti coklat dan 287 roti keju. Berapa total roti terjual?", a:["411","358","611","111"], c:"611"},
+  {q:"9. Toko buah memiliki 450 apel, membeli lagi 275, menjual 380. Berapa sisa apel?", a:["154","454","345","156"], c:"345"},
+  {q:"10. Lomba membaca: 325 + 298 + 245 – 120. Hasilnya?", a:["405","305","503","508"], c:"503"}
+];
+
+const quizDiv = document.getElementById("quiz");
+soal.forEach((s,i)=>{
+  let div = document.createElement("div");
+  div.className="soal";
+  div.innerHTML = `<p>${s.q}</p>` + s.a.map(
+    v=>`<label><input type="radio" name="q${i}" value="${v}"> ${v}</label><br>`
+  ).join("") + `<p id="feedback${i}" class="feedback"></p>`;
+  quizDiv.appendChild(div);
+});
+
+function cekJawaban(){
+  let benar=0;
+  soal.forEach((s,i)=>{
+    let jawaban = document.querySelector(`input[name='q${i}']:checked`);
+    let feedback = document.getElementById(`feedback${i}`);
+    if(jawaban){
+      if(jawaban.value===s.c){
+        benar++;
+        feedback.innerHTML = `<span class="benar">✅ Benar! Jawaban: ${s.c}</span>`;
+      } else {
+        feedback.innerHTML = `<span class="salah">❌ Salah. Jawaban benar: ${s.c}</span>`;
+      }
+    } else {
+      feedback.innerHTML = `<span class="salah">⚠️ Belum dijawab. Jawaban benar: ${s.c}</span>`;
+    }
+  });
+  document.getElementById("hasil").innerText = `Skor Anda: ${benar} dari ${soal.length}`;
+}
+</script>
+   <div class="result" id="result"></div>
+  <a href="index.html" class="back">← Kembali ke Menu</a>
+</body>
+</html>

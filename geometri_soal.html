@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Soal Geometri</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff8f0;
+    margin: 30px;
+  }
+  h2 { text-align: center; color: #333; }
+  .soal {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .feedback {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  .benar {
+    color: green;
+  }
+  .salah {
+    color: red;
+  }
+  button {
+    background-color: #ff7f50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button:hover { background-color: #e96a3e; }
+</style>
+</head>
+<body>
+
+<h2>Soal Geometri</h2>
+
+<form id="quizForm">
+  <div id="quiz"></div>
+  <button type="button" onclick="cekJawaban()">Kirim Jawaban</button>
+</form>
+
+<h3 id="hasil"></h3>
+
+<script>
+const soal = [
+  {q:"1. Keliling jajar genjang dengan alas 15 cm dan sisi miring 9 cm adalah …", a:["60 cm","58 cm","48 cm","65 cm"], c:"48 cm"},
+  
+  {q:"2. Jajar genjang dengan alas 20 cm dan tinggi 10 cm mempunyai luas …", a:["200 cm²","199 cm²","201 cm²","100 cm²"], c:"200 cm²"},
+  {q:"3. Jika keliling jajar genjang 50 cm dan sisi miring 12 cm, maka panjang alasnya adalah …", a:["15","12","31","13"], c:"13"},
+  {q:"4. Jika luas jajar genjang 84 cm² dan tingginya 7 cm, maka alasnya adalah …", a:["16","21","12","31"], c:"12"},
+  {q:"5. Sudut yang berdekatan pada jajar genjang jika dijumlahkan hasilnya adalah …", a:[
+    "180°","90°","160°","360°"], c:"180°"},
+  {q:"6. Sebuah jajargenjang memiliki alas 12 cm dan tinggi 8 cm. Berapakah luasnya?", a:["99 cm²","97 cm²","98 cm²","96 cm²"], c:"96 cm²"},
+  {q:"7. Sebuah taman berbentuk jajargenjang memiliki alas 24 m dan sisi miring 18 m. Berapa kelilingnya?", a:["88 m","87 m","85 m","84 m"], c:"84 m"},
+  {q:"8. Sebuah papan kayu berbentuk jajargenjang memiliki keliling 80 cm, jika salah satu sisinya 25 cm, berapa sisi lainnya?", a:["15 cm","35 cm","25 cm","33 cm"], c:"15 cm"},
+  {q:"9. Sebuah bingkai foto berbentuk jajar genjang dengan alas 20 cm dan sisi miring 15 cm. Berapa kelilingnya?", a:["50 cm","60 cm","72 cm","70 cm"], c:"70 cm"},
+  {q:"10. Sebuah kebun berbentuk jajargenjang memiliki alas 40 m dan sisi miring 25 m. Jika setiap jarak 5 m ditanami pohon, berapa jumlah pohon?", a:["25 pohon","26 pohon","22 pohon","30 pohon"], c:"26 pohon"}
+];
+
+const quizDiv = document.getElementById("quiz");
+soal.forEach((s,i)=>{
+  let div = document.createElement("div");
+  div.className="soal";
+  div.innerHTML = `<p>${s.q}</p>` + s.a.map(
+    v=>`<label><input type="radio" name="q${i}" value="${v}"> ${v}</label><br>`
+  ).join("") + `<p id="feedback${i}" class="feedback"></p>`;
+  quizDiv.appendChild(div);
+});
+
+function cekJawaban(){
+  let benar=0;
+  soal.forEach((s,i)=>{
+    let jawaban = document.querySelector(`input[name='q${i}']:checked`);
+    let feedback = document.getElementById(`feedback${i}`);
+    if(jawaban){
+      if(jawaban.value===s.c){
+        benar++;
+        feedback.innerHTML = `<span class="benar">✅ Benar! Jawaban: ${s.c}</span>`;
+      } else {
+        feedback.innerHTML = `<span class="salah">❌ Salah. Jawaban benar: ${s.c}</span>`;
+      }
+    } else {
+      feedback.innerHTML = `<span class="salah">⚠️ Belum dijawab. Jawaban benar: ${s.c}</span>`;
+    }
+  });
+  document.getElementById("hasil").innerText = `Skor Anda: ${benar} dari ${soal.length}`;
+}
+</script>
+
+</body>
+</html>

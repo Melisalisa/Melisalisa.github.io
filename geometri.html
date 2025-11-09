@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Dasar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0fff0; /* Latar belakang hijau muda */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Judul Utama */
+        h1 {
+            color: #2f4f2f; /* Hijau Tua */
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #d8eac7;
+            margin-bottom: 30px;
+        }
+
+        /* Sub Judul */
+        h2 {
+            color: #556b2f; /* Hijau Sedang */
+            border-left: 5px solid #a2b56e;
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        /* Sub-sub Judul */
+        h3 {
+            color: #7b8d4f;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Paragraf */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        /* Daftar (Sifat & Soal) */
+        ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            padding-left: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Kotak Contoh/Jawaban */
+        .example-box {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        /* Gambar (Placeholder) */
+        .image-placeholder {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        
+        /* Rumus */
+        .formula {
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        a.back {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background: #5b8c51;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    a.back:hover {
+      background: #3d6434;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Geometri</h1>
+        
+        <b>Pegantar Jajargenjang</b><p>Segi banyak merupakan suatu kurva tertutup yang dibatasi paling sedikit tiga buah ruas garis. Di sekitar kita banyak benda yang yang bentuknya mirip jajar genjang, seperti papan tulis miring, atap rumah, atau kain segitiga yang ditarik miring.</p>
+        <p>Dalam pelajaran ini, kamu akan belajar menentukan keliling dan luas jajar genjang dengan cara yang mudah dan tepat. Kamu juga akan berlatih menyelesaikan soal cerita yang berkaitan dengan keliling dan luas, serta menunjukkan hasil perhitunganmu dengan percaya diri. Dengan belajar ini, kamu akan lebih paham bentuk-bentuk di sekitar dan menjadi lebih teliti dalam menghitung.</p>
+        
+        <div class="image-placeholder">
+            <p>Contoh gambar di kehidupan sehari-hari:</p>
+            <img src="image/Picture1.png" 
+         alt="Contoh makanan berbentuk jajar genjang" 
+         title="Contoh gambar dikehidupan sehari-hari"
+         width="200"    height="175">
+             
+        </div>
+
+        <h2>A. Jajar Genjang</h2>
+        <p>Jajargenjang merupakan bangun datar segiempat dengan sisi – sisinya yang berhadapan sejajar dan sama panjang.</p>
+        
+        <h3>Sifat – Sifat Jajargenjang</h3>
+        <ul>
+            <li>Sisi – sisi yang berhadapan sama panjang dan sejajar.
+                <div class="image-placeholder">
+                    <img src="image/jj1.png" 
+         alt="Contoh makanan berbentuk jajar genjang" 
+         title="Contoh gambar dikehidupan sehari-hari"
+         width="200"    height="175">
+                </div>
+            </li>
+            <li>Sudut – sudut yang berhadapan sama besar.
+                <div class="image-placeholder">
+                   <img src="image/jj2.png" 
+         alt="Contoh makanan berbentuk jajar genjang" 
+         title="Contoh gambar dikehidupan sehari-hari"
+         width="200"    height="175">
+                </div>
+            </li>
+            <li>Jumlah pasangan sudut yang saling berdekatan adalah 180&deg;.
+                <div class="image-placeholder">
+                    <img src="image/jj3.png" 
+         alt="Contoh makanan berbentuk jajar genjang" 
+         title="Contoh gambar dikehidupan sehari-hari"
+         width="200"    height="175">
+                </div>
+            </li>
+            <li>Kedua diagonalnya saling membagi dua sama panjang. 
+                <div class="image-placeholder">
+                    <img src="image/jj4.png" 
+         alt="Contoh makanan berbentuk jajar genjang" 
+         title="Contoh gambar dikehidupan sehari-hari"
+         width="200"    height="175">
+                </div>
+            </li>
+        </ul>
+
+        <h2>B. Keliling</h2>
+        <p>Jajar genjang merupakan bangun segiempat yang sisi - sisinya sejajar sama panjang dan sudut - sudut yang berhadapan sama besar.</p>
+        
+        <div class="image-placeholder">
+            <img src="image/k1.png" 
+         alt="Contoh makanan berbentuk jajar genjang" 
+         title="Contoh gambar dikehidupan sehari-hari"
+         width="200"    height="175">
+        </div>
+        
+        <p>Panjang AB = CD dan BC = DA. </p>
+        <p>Rumus Keliling jajar genjang:</p>
+        <div class="formula">
+            Keliling = AB + BC + CD + DA 
+        </div>
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Keliling Jajar Genjang</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .title {
+            text-align: center;
+            color: #800080; /* Ungu */
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        /* Gaya Kotak Soal */
+        .soal-card {
+            border: 1px solid #dcdcdc; 
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .soal-nomor {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .pilihan {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            padding: 5px 0;
+        }
+
+        .pilihan input[type="radio"] {
+            margin-top: 5px;
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        
+        /* Gaya Tombol Periksa */
+        .periksa-btn {
+            background-color: #5cb85c; /* Hijau */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .periksa-btn:hover {
+            background-color: #4cae4c;
+        }
+
+        /* Gaya Feedback (Hasil Jawaban) */
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: none; /* Sembunyikan secara default */
+            font-size: 15px;
+        }
+
+        .feedback.benar {
+            background-color: #dff0d8; /* Hijau muda */
+            color: #3c763d; /* Hijau tua */
+            border: 1px solid #d6e9c6;
+        }
+
+        .feedback.salah {
+            background-color: #f2dede; /* Merah muda */
+            color: #a94442; /* Merah tua */
+            border: 1px solid #ebccd1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">Latihan Menghitung Keliling Jajar Genjang</h1>
+
+        <div class="soal-card" id="soal-1">
+            <div class="soal-nomor">1. Sebuah jajar genjang memiliki keliling 60 cm. Jika panjang sisi alasnya 18 cm, berapakah panjang sisi miringnya?</div>
+           
+                    <img src="keliling/1.jpeg" 
+         width="300"   height="100">
+            <label class="pilihan"><input type="radio" name="soal1" value="A"> A. 19 cm</label>
+            <label class="pilihan"><input type="radio" name="soal1" value="B"> B. 24 cm</label>
+            <label class="pilihan"><input type="radio" name="soal1" value="C"> C. 12 cm</label>
+            <label class="pilihan"><input type="radio" name="soal1" value="D"> D. 42 cm</label>
+            <button class="periksa-btn" onclick="periksaJawaban('soal1', 'C', '12 cm')">Periksa</button>
+            <div class="feedback" id="feedback-soal1"></div>
+        </div>
+        
+        <div class="soal-card" id="soal-2">
+            <div class="soal-nomor">2. Keliling suatu jajar genjang adalah 72 cm. Jika panjang sisi miringnya 4 cm lebih panjang dari sisi alas, tentukan panjang masing-masing sisi jajar genjang itu!</div>
+            <label class="pilihan"><input type="radio" name="soal2" value="A"> A. 16 cm</label>
+            <label class="pilihan"><input type="radio" name="soal2" value="B"> B. 45 cm</label>
+            <label class="pilihan"><input type="radio" name="soal2" value="C"> C. 26 cm</label>
+            <label class="pilihan"><input type="radio" name="soal2" value="D"> D. 18 cm</label>
+            <button class="periksa-btn" onclick="periksaJawaban('soal2', 'C', 'sisi alas=16 cm, sisi miring=20 cm')">Periksa</button>
+            <div class="feedback" id="feedback-soal2"></div>
+        </div>
+
+        <div class="soal-card" id="soal-3">
+            <div class="soal-nomor">3. Sebuah taman berbentuk jajar genjang memiliki selisih panjang sisi alas dan sisi miring sebesar 5 m. Jika keliling taman 70 m, berapa panjang sisi alas dan sisi miringnya?</div>
+            
+                    <img src="keliling/2.jpeg" 
+        
+         width="300"    height="100">
+            <label class="pilihan"><input type="radio" name="soal3" value="A"> A. sisi alas=35 m &nbsp; sisi miring=20 m</label>
+            <label class="pilihan"><input type="radio" name="soal3" value="B"> B. sisi alas=16 m &nbsp; sisi miring=20 m</label>
+            <label class="pilihan"><input type="radio" name="soal3" value="C"> C. sisi alas=20 m &nbsp; sisi miring=25 m</label>
+            <label class="pilihan"><input type="radio" name="soal3" value="D"> D. sisi alas=20 m &nbsp; sisi miring= 15 m</label>
+            <button class="periksa-btn" onclick="periksaJawaban('soal3', 'D', 'sisi alas=20 m, sisi miring=15 m')">Periksa</button>
+            <div class="feedback" id="feedback-soal3"></div>
+        </div>
+
+        <div class="soal-card" id="soal-4">
+            <div class="soal-nomor">4. Jajar genjang ABCD memiliki dua kali sisi alas ditambah dua kali sisi miring = 100 cm. Jika sisi miringnya 20 cm, tentukan panjang sisi alasnya!</div>
+            <label class="pilihan"><input type="radio" name="soal4" value="A"> A. 25 cm</label>
+            <label class="pilihan"><input type="radio" name="soal4" value="B"> B. 20 cm</label>
+            <label class="pilihan"><input type="radio" name="soal4" value="C"> C. 45 cm</label>
+            <label class="pilihan"><input type="radio" name="soal4" value="D"> D. 30 cm</label>
+            <button class="periksa-btn" onclick="periksaJawaban('soal4', 'D', '30 cm')">Periksa</button>
+            <div class="feedback" id="feedback-soal4"></div>
+        </div>
+
+        <div class="soal-card" id="soal-5">
+            <div class="soal-nomor">5. Panjang keliling suatu jajar genjang lebih panjang 16 cm dari empat kali sisi miringnya. Jika kelilingnya 64 cm, berapa panjang sisi miring dan sisi alasnya?</div>
+            <label class="pilihan"><input type="radio" name="soal5" value="A"> A. sisi miring=12 cm &nbsp; sisi alas= 35 cm</label>
+            <label class="pilihan"><input type="radio" name="soal5" value="B"> B. sisi miring=12 cm &nbsp; sisi alas= 20 cm</label>
+            <label class="pilihan"><input type="radio" name="soal5" value="C"> C. sisi miring=15 cm &nbsp; sisi alas=20 cm</label>
+            <label class="pilihan"><input type="radio" name="soal5" value="D"> D. sisi miring=20 cm &nbsp; sisi alas=12 cm</label>
+            <button class="periksa-btn" onclick="periksaJawaban('soal5', 'B', 'sisi miring=12 cm, sisi alas=20 cm')">Periksa</button>
+            <div class="feedback" id="feedback-soal5"></div>
+        </div>
+    </div>
+
+    <script>
+        // Kunci Jawaban
+        // 1: C (12 cm)
+        // 2: C (sisi alas=16, sisi miring=20) - Berdasarkan perhitungan, A (16 cm) tidak lengkap
+        // 3: D (sisi alas=20 m, sisi miring=15 m)
+        // 4: D (30 cm)
+        // 5: B (sisi miring=12 cm, sisi alas=20 cm)
+
+        function periksaJawaban(namaSoal, kunciJawaban, teksJawabanBenar) {
+            const pilihan = document.querySelector(`input[name="${namaSoal}"]:checked`);
+            const feedbackElement = document.getElementById(`feedback-${namaSoal}`);
+            
+            // Atur ulang tampilan feedback
+            feedbackElement.style.display = 'block';
+            feedbackElement.className = 'feedback';
+            feedbackElement.innerHTML = '';
+
+            if (pilihan) {
+                const jawabanPengguna = pilihan.value;
+                if (jawabanPengguna === kunciJawaban) {
+                    feedbackElement.classList.add('benar');
+                    feedbackElement.innerHTML = '✅ **Jawaban Benar!**';
+                } else {
+                    feedbackElement.classList.add('salah');
+                    feedbackElement.innerHTML = `❌ **Jawaban Salah.** Jawaban benar: ${teksJawabanBenar}.`;
+                }
+            } else {
+                feedbackElement.classList.add('salah');
+                feedbackElement.innerHTML = '⚠️ Pilih salah satu opsi terlebih dahulu!';
+            }
+        }
+    </script>
+</body>
+</html>
+
+        <h2>C. Luas</h2>
+        <p>Luas jajar genjang dapat ditentukan dengan mengubahnya menjadi persegi panjang terlebih dahulu. Perhatikan gambar di bawah ini!</p>
+        
+        <div class="image-placeholder">
+            <img src="image/l1.png" 
+         width="300"    height="205">
+        </div>
+        
+        <p>Jajar genjang diubah menjadi persegi Panjang terlebih dahulu.</p>
+        <div class="image-placeholder">
+            <img src="image/l3.PNG" 
+         width="450"    height="205">
+        </div>
+        <p><b>Contoh:</p></b>
+        <div class="image-placeholder">
+            <img src="image/l2.png" 
+         width="450"    height="350">
+        </div>
+        <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Menghitung Luas Jajar Genjang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .question-block {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .option label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .option label:hover {
+            background-color: #f0f0ff;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: none; /* Sembunyikan secara default */
+        }
+        .correct {
+            background-color: #e6ffe6;
+            color: #28a745;
+            border: 1px solid #28a745;
+        }
+        .incorrect {
+            background-color: #ffe6e6;
+            color: #dc3545;
+            border: 1px solid #dc3545;
+        }
+        #check-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+        #check-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1> Kuis Menghitung Luas Jajar Genjang</h1>
+    <p>Pilih jawaban yang paling tepat untuk setiap soal di bawah ini.</p>
+    
+    <form id="quiz-form">
+        
+        <div class="question-block" id="q1">
+            <div class="question-text">1. Sebuah jajar genjang memiliki luas 180 cm². Jika alasnya 3 kali lebih panjang dari tingginya, tentukan panjang alas dan tinggi jajar genjang tersebut!</div>
+            <img src="luas/luas1.jpeg" 
+         width="200"   height="100">
+            <div class="option">
+                <input type="radio" id="q1a" name="q1" value="a">
+                <label for="q1a">a. panjang alas = 15 cm; tinggi = 9 cm</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q1b" name="q1" value="b">
+                <label for="q1b">b. panjang alas = 18 cm; tinggi = 6 cm</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q1c" name="q1" value="c">
+                <label for="q1c">c. panjang alas = 24 cm; tinggi = 6 cm</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q1d" name="q1" value="d">
+                <label for="q1d">d. panjang alas = 30 cm; tinggi = 6 cm</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+        
+        <div class="question-block" id="q2">
+            <div class="question-text">2. Luas suatu jajar genjang sama dengan luas persegi panjang yang panjangnya 20 cm dan lebarnya 9 cm. Jika tinggi jajar genjang itu 9 cm, tentukan panjang alasnya!</div>
+            <div class="option">
+                <input type="radio" id="q2a" name="q2" value="a">
+                <label for="q2a">a. 30 cm</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q2b" name="q2" value="b">
+                <label for="q2b">b. 25 cm</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q2c" name="q2" value="c">
+                <label for="q2c">c. 20 cm</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q2d" name="q2" value="d">
+                <label for="q2d">d. 23 cm</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+        
+        <div class="question-block" id="q3">
+            <div class="question-text">3. Sebuah jajar genjang memiliki alas 24 cm dan tinggi 10 cm. Jika alasnya diperpanjang 6 cm, berapa kenaikan luas jajar genjang tersebut?</div>
+            <div class="option">
+                <input type="radio" id="q3a" name="q3" value="a">
+                <label for="q3a">a. 50 cm²</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q3b" name="q3" value="b">
+                <label for="q3b">b. 30 cm²</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q3c" name="q3" value="c">
+                <label for="q3c">c. 60 cm²</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q3d" name="q3" value="d">
+                <label for="q3d">d. 80 cm²</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+        
+        <div class="question-block" id="q4">
+            <div class="question-text">4. Dua jajar genjang memiliki alas yang sama (15 cm). Tinggi jajar genjang pertama 8 cm, dan jajar genjang kedua 12 cm. Berapa selisih luas kedua jajar genjang itu?</div>
+                 <img src="luas/luas4.jpeg" 
+         width="300"   height="100">
+            <div class="option">
+                <input type="radio" id="q4a" name="q4" value="a">
+                <label for="q4a">a. 54 cm²</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q4b" name="q4" value="b">
+                <label for="q4b">b. 90 cm²</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q4c" name="q4" value="c">
+                <label for="q4c">c. 60 cm²</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q4d" name="q4" value="d">
+                <label for="q4d">d. 45 cm²</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+        
+        <div class="question-block" id="q5">
+            <div class="question-text">5. Sebuah jajar genjang memiliki luas 252 cm². Jika tinggi jajar genjang 3/4 dari alasnya, berapa panjang alas dan tingginya?</div>
+            <div class="option">
+                <input type="radio" id="q5a" name="q5" value="a">
+                <label for="q5a">a. panjang alas = 24 cm; tinggi = 18 cm</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q5b" name="q5" value="b">
+                <label for="q5b">b. panjang alas = 18 cm; tinggi = 24 cm</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q5c" name="q5" value="c">
+                <label for="q5c">c. panjang alas = 48 cm; tinggi = 24 cm</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="q5d" name="q5" value="d">
+                <label for="q5d">d. panjang alas = 62 cm; tinggi = 18 cm</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+        
+        <button type="button" id="check-button" onclick="checkAnswers()">Periksa Jawaban</button>
+        
+    </form>
+    
+    <div id="result-summary" style="margin-top: 20px; font-size: 1.2em; font-weight: bold;"></div>
+
+</div>
+
+<script>
+    // Kunci Jawaban
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'c',
+        q3: 'c',
+        q4: 'c',
+        q5: 'a'
+    };
+
+    // Fungsi untuk memeriksa semua jawaban
+    function checkAnswers() {
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        // Iterasi melalui setiap soal
+        for (let i = 1; i <= totalQuestions; i++) {
+            const questionName = 'q' + i;
+            const feedbackElement = document.getElementById('feedback' + i);
+            const selectedOption = document.querySelector('input[name="' + questionName + '"]:checked');
+
+            // Reset tampilan feedback
+            feedbackElement.style.display = 'none';
+            feedbackElement.className = 'feedback';
+            feedbackElement.textContent = '';
+            
+            // Periksa jawaban
+            if (selectedOption) {
+                const userAnswer = selectedOption.value;
+                const correctAnswer = correctAnswers[questionName];
+
+                if (userAnswer === correctAnswer) {
+                    // Jawaban Benar
+                    feedbackElement.classList.add('correct');
+                    feedbackElement.textContent = '✅ Benar!';
+                    score++;
+                } else {
+                    // Jawaban Salah
+                    feedbackElement.classList.add('incorrect');
+                    feedbackElement.textContent = '❌ Salah. Jawaban yang benar adalah opsi ' + correctAnswer.toUpperCase() + '.';
+                }
+            } else {
+                // Belum dijawab
+                feedbackElement.classList.add('incorrect');
+                feedbackElement.textContent = '❓ Belum dijawab.';
+            }
+
+            // Tampilkan feedback
+            feedbackElement.style.display = 'block';
+        }
+        
+        // Tampilkan ringkasan hasil
+        const resultSummary = document.getElementById('result-summary');
+        resultSummary.textContent = `Anda berhasil menjawab ${score} dari ${totalQuestions} soal.`;
+    }
+</script>
+</pre>
+
+    <a href="index.html" class="back">← Kembali ke Menu</a>
+  </div>
+</body>
+</html>
+   
+</body>
+</html>
