@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Undangan Pernikahan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fffaf5;
+  text-align: center;
+}
+
+/* COVER FULL RESPONSIVE */
+.cover {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  color: white;
+  text-align: center;
+}
+
+/* BACKGROUND IMAGE */
+.image-placeholder img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: -2;
+
+  animation: zoom 12s ease-in-out infinite alternate;
+}
+
+/* ZOOM EFFECT */
+@keyframes zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+/* OVERLAY */
+.cover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+.btn {
+  background: #b76e79;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* GALERI */
+.gallery img {
+  width: 90%;
+  max-width: 300px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+/* MAP */
+iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* REKENING */
+.rekening {
+  background: #ffe4e1;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* INPUT */
+input, textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* MUSIC BUTTON */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #b76e79;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="musik" loop>
+  <source src="https://raw.githubusercontent.com/Melisalisa/undangan/main/bensound-angelsbymyside.mp3" type="audio/mp3">
+</audio>
+
+<!-- COVER -->
+<section class="cover">
+
+  <div class="image-placeholder">
+    <img src="img/foto1.jpeg">
+  </div>
+
+  <h2>Undangan Pernikahan</h2>
+  <h1>Lailatul Fitriyah & Yoga</h1>
+  <button class="btn" onclick="bukaUndangan()">Buka Undangan</button>
+
+</section>
+
+<!-- ISI -->
+<div id="isi" style="display:none">
+
+<section>
+  <h1 style="color:#b76e79;">Lailatul Fitriyah & Yoga</h1>
+  <p>Dengan penuh kebahagiaan kami mengundang Anda</p>
+</section>
+
+<section>
+  <h2 style="color:#b76e79;">Menuju Hari Bahagia</h2>
+  <h3 id="countdown"></h3>
+</section>
+
+<section>
+  <h2 style="color:#b76e79;">Detail Acara</h2>
+  <p>Akad: 20 November 2026</p>
+  <p>Resepsi: 20 November 2026</p>
+  <p>Lokasi: Rumah mempelai wanita</p>
+</section>
+
+<!-- MAP -->
+<section>
+  <h2 style="color:#b76e79;">Lokasi</h2>
+
+  <iframe src="https://www.google.com/maps?q=Jl.+Serma+Abdul+Basuki+No.10+Tajinan+Malang&output=embed"></iframe>
+
+  <br><br>
+
+  <a href="https://www.google.com/maps?q=Jl.+Serma+Abdul+Basuki+No.10+Tajinan+Malang" target="_blank">
+    <button class="btn">📍 Buka di Google Maps</button>
+  </a>
+</section>
+
+<!-- GALERI -->
+<section class="gallery">
+  <h2 style="color:#b76e79;">Galeri</h2>
+  <img src="img/foto1.jpeg">
+  <img src="img/foto1.jpeg">
+  <img src="img/foto1.jpeg">
+</section>
+
+<!-- REKENING -->
+<section>
+  <h2 style="color:#b76e79;">Gift</h2>
+  <div class="rekening">
+    <p>Bank BRI</p>
+    <p>No Rek: 1234567890</p>
+    <p>a.n Lailatul Fitriyah</p>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section>
+  <h2 style="color:#b76e79;">Konfirmasi Kehadiran</h2>
+  <input type="text" placeholder="Nama"><br>
+  <textarea placeholder="Ucapan"></textarea><br>
+  <button class="btn">Kirim</button>
+</section>
+
+</div>
+
+<!-- MUSIC BUTTON -->
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<script>
+function bukaUndangan() {
+  document.querySelector(".cover").style.display = "none";
+  document.getElementById("isi").style.display = "block";
+
+  var musik = document.getElementById("musik");
+  musik.volume = 0.3;
+  musik.play();
+}
+
+function toggleMusic() {
+  var musik = document.getElementById("musik");
+  if (musik.paused) {
+    musik.play();
+  } else {
+    musik.pause();
+  }
+}
+
+// COUNTDOWN
+var countDate = new Date("November 20, 2026 00:00:00").getTime();
+
+setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  var minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  var seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    days + " Hari " + hours + " Jam " + minutes + " Menit " + seconds + " Detik";
+}, 1000);
+</script>
+
+</body>
+</html>
